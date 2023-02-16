@@ -1,0 +1,13 @@
+// estensiones para visual estudio code
+
+{
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.trimAutoWhitspace": true,
+  "editor.tabSize":2,
+  "files.insertFinalNewLine": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.tarilingComma": "es5"
+}

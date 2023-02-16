@@ -1,0 +1,16 @@
+// depuracion con visual estudio code
+
+{
+    "version": "0.2.0",
+    "configurations":[
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Node: attach to process",
+            "processId": "${command:pickProcess}",
+            "restart": true,
+            "protocol": "inspector"
+
+        }
+    ]
+}

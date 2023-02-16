@@ -1,0 +1,42 @@
+{"timestamp":"16/02/2023 00:18:53","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 00:18:53","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 00:18:53","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 00:18:53","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'pablo' }"}
+{"timestamp":"16/02/2023 00:38:56","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 00:38:56","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 00:38:56","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 00:38:56","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:35:28","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:35:28","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:35:28","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:35:28","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:39:51","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:39:51","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:39:51","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:39:51","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:43:34","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:44:46","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:44:46","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:44:46","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:44:46","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:45:14","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:45:14","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:45:14","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:45:14","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:46:03","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:46:03","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:46:03","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:46:03","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:47:19","level":"info","message":"LOG: Mensaje informativo","data":null}
+{"timestamp":"16/02/2023 15:47:19","level":"warn","message":"LOG: Mensaje de advertencia","data":null}
+{"timestamp":"16/02/2023 15:47:19","level":"error","message":"LOG: Mensaje de error","data":null}
+{"timestamp":"16/02/2023 15:47:19","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:47:58","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:51:06","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:55:28","level":"info","message":"LOG: Mensaje con datos","data":"{ user_id: 'javier' }"}
+{"timestamp":"16/02/2023 15:55:43","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
+{"timestamp":"16/02/2023 16:10:14","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
+{"timestamp":"16/02/2023 16:10:47","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
+{"timestamp":"16/02/2023 16:12:23","level":"info","message":"\u001b[91m[object Object]\u001b[39m","data":null}
+{"timestamp":"16/02/2023 16:13:18","level":"info","message":"\u001b[91mLOG: Mensaje con datos [object Object]\u001b[39m","data":null}
+{"timestamp":"16/02/2023 16:13:53","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
