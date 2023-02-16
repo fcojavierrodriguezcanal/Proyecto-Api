@@ -59,8 +59,7 @@ const logger = new Logger();
 
 
 
-logger.info('LOG: Mensaje con datos', { id: 'javier' })    // enlazar 
-
+logger.info('LOG: Mensaje con datos', { id: 'javier' })     
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 app.use("/posts", postRouter);
 
@@ -78,9 +77,9 @@ mongoose.connect('mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/
         console.log(chalk.yellowBright(" Conected DB: Mongodb"));
            
     })
-    .catch(err => console.log(err));  // Si no se conecta correctamente escupimos el error
+    .catch(err => console.log(err));  
 
-app.post("/welcome", auth, (req, res) => {  // sacar de aqui junto con el require auth
+app.post("/welcome", auth, (req, res) => {  
   res.status(200).send("Welcome 🙌 ");
 });
 // arranque swager en port 4001/api-docs/#
