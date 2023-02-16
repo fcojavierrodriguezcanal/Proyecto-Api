@@ -12,7 +12,7 @@ api.post("/register", async (req, res) => {
 
   try {
     // Obtener la entrada del usuario
-    const { user_id, first_name, last_name, email, password } = req.body;
+    const { user_id, designation, first_name, last_name, email, password } = req.body;
 
     // Validar la entrada del usuario
     if (!(email && password && first_name && last_name)) {
@@ -33,6 +33,7 @@ api.post("/register", async (req, res) => {
     // Crear usuario en nuestra base de datos
     const user = await User.create({
       user_id,
+      designation,
       first_name,
       last_name,
       email: email.toLowerCase(), 

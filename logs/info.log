@@ -40,3 +40,4 @@
 {"timestamp":"16/02/2023 16:12:23","level":"info","message":"\u001b[91m[object Object]\u001b[39m","data":null}
 {"timestamp":"16/02/2023 16:13:18","level":"info","message":"\u001b[91mLOG: Mensaje con datos [object Object]\u001b[39m","data":null}
 {"timestamp":"16/02/2023 16:13:53","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
+{"timestamp":"16/02/2023 16:27:45","level":"info","message":"LOG: Mensaje con datos","data":"{ id: 'javier' }"}
