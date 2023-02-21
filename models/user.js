@@ -1,10 +1,12 @@
 
 
 const mongoose = require('mongoose');
-const ObjectId = require('mongodb').ObjectId;
+const { ObjectId } = mongoose.Types;
+
+const options = { discriminatorKey: 'rol' };
+
 
 const Schema = mongoose.Schema;
-
 
 
 const UserSchema = Schema({
@@ -15,10 +17,20 @@ const UserSchema = Schema({
     email: { type: String, unique: true },
     password: { type: String },
     token: { type: Array["access:true","access:false"],
-    rol: { type: String, enum: ['dibujante','cliente'], required: true}
+    //rol: { type: String, enum: ['dibujante','cliente'], required: true}
 
      },
 });
+const User = mongoose.model('user', UserSchema);
 
+const dibujanteSchema = new Schema({})
+const Dibujante = User.discriminator('dibujante', dibujanteSchema, options);
 
-module.exports = mongoose.model('user', UserSchema);
+const clienteSchema = new Schema({})
+const Cliente = User.discriminator('cliente', clienteSchema, options);
+
+module.exports = {
+    User,
+    Dibujante,
+    Cliente
+}
