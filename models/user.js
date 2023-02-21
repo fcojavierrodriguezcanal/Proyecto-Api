@@ -14,7 +14,11 @@ const UserSchema = Schema({
     last_name: { type: String, default: null },
     email: { type: String, unique: true },
     password: { type: String },
-    token: { type: String, required:true },
+    token: { type: Array["access:true","access:false"],
+    rol: { type: String, enum: ['dibujante','cliente'], required: true}
+
+     },
 });
+
 
 module.exports = mongoose.model('user', UserSchema);
