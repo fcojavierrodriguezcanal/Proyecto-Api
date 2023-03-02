@@ -3,7 +3,7 @@ const jwt = require('jwt-simple');
 const moment = require('moment');
 const config = process.env;
 
-exports.ensureAuth = function(req, res, next){
+const ensureAuth = function(req, res, next){
     if(!req.headers.authorization){
         return res.status(403).send({message: 'La peticion no tiene la cabecera de autenticación'});
     } else {
@@ -42,4 +42,4 @@ const verifyToken = (req, res, next) => {
   return next();
 };
 
-module.exports = verifyToken;
+export { verifyToken, ensureAuth};

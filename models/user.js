@@ -1,6 +1,5 @@
+import { mongoose } from '../loaders/mongo.js';
 
-
-const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Types;
 
 const options = { discriminatorKey: 'rol' };
@@ -10,27 +9,25 @@ const Schema = mongoose.Schema;
 
 
 const UserSchema = Schema({
-    id: {type: ObjectId, required:true},
-    designation: {type: String, required: true},
+    id: {type: ObjectId, required:false},
     first_name: { type: String, default: null },
     last_name: { type: String, default: null },
     email: { type: String, unique: true },
     password: { type: String },
-    token: { type: Array["access:true","access:false"],
+    //token: { type: Array["access:true","access:false"]},
     //rol: { type: String, enum: ['dibujante','cliente'], required: true}
 
-     },
+     
 });
+
 const User = mongoose.model('user', UserSchema);
 
-const dibujanteSchema = new Schema({})
-const Dibujante = User.discriminator('dibujante', dibujanteSchema, options);
+const dibujanteSchema = new Schema({
 
+})
 const clienteSchema = new Schema({})
+
+const Dibujante = User.discriminator('dibujante', dibujanteSchema, options);
 const Cliente = User.discriminator('cliente', clienteSchema, options);
 
-module.exports = {
-    User,
-    Dibujante,
-    Cliente
-}
+export { User, Dibujante, Cliente };

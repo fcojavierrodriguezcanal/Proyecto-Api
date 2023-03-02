@@ -1,39 +1,47 @@
 // src/routes/user
-
-const express = require('express');
-const userController = require('../controller/user');
+import { User } from "../models/user.js"
+import express from 'express';
+import { getUser } from '../controller/user.js';
+import bodyParser from 'body-parser'
+import bcrypt from 'bcrypt'
+import jwt from 'jwt-simple'
 const api = express.Router();
 
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
 api.get('/user/:id', function(req, res){
-  md_auth.ensureAuth, userController.getUser
+  md_auth.ensureAuth, getUser
 });
 
-api.post("/register", async (req, res) => {
+api.post("/register",jsonParser, async (req, res) => {
 
   try {
     // Obtener la entrada del usuario
-    const { user_id, designation, first_name, last_name, email, password } = req.body;
+    console.log("Request: " + req.body.user_id)
+    const { user_id, first_name, last_name, email, password } = req.body;
 
     // Validar la entrada del usuario
     if (!(email && password && first_name && last_name)) {
       res.status(400).send("No se aportaron todos los datos");
     }
 
-    // comprobar si el usuario ya existe
     // Validar si el usuario existe en nuestra base de datos
     const oldUser = await User.findOne({ email });
 
-    if (oldUser) {
-      return res.status(409).send("Este usuario ya existe");
-    }
+    //if (oldUser) {
+      //return res.status(409).send("Este usuario ya existe");
+    //}
 
     //Cifrar contraseña de usuario
-    encryptedPassword = await bcrypt.hash(password, 10);
+    let encryptedPassword = await bcrypt.hash(password, 10);
 
     // Crear usuario en nuestra base de datos
     const user = await User.create({
       user_id,
-      designation,
       first_name,
       last_name,
       email: email.toLowerCase(), 
@@ -90,7 +98,7 @@ api.post("/login", async (req, res) => {
   }
 });
 
-module.exports = api;
+export { api };
 
 
  
