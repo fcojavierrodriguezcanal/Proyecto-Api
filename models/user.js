@@ -27,7 +27,7 @@ const dibujanteSchema = new Schema({
 })
 const clienteSchema = new Schema({})
 
-const Dibujante = User.discriminator('dibujante', dibujanteSchema, options);
-const Cliente = User.discriminator('cliente', clienteSchema, options);
+const Dibujante = User.discriminator('Dibujante', dibujanteSchema, options);
+const Cliente = User.discriminator('Cliente', clienteSchema, options);
 
 export { User, Dibujante, Cliente };

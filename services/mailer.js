@@ -10,3 +10,13 @@ const transport = nodemailer.createTransport({
          refreshToken: "Refresh Token Here",
          accessToken: myAccessToken //access token variable we defined earlier
     }});
+    
+    let message = {
+     
+     from: 'fjaviroca@gmail.com', // listed in rfc822 message header
+     to: 'fjaviroca@gmail.com', // listed in rfc822 message header
+     envelope: {
+         from: 'Daemon <deamon@nodemailer.com>', // used as MAIL FROM: address for SMTP
+         to: 'mailer@nodemailer.com, Mailer <mailer2@nodemailer.com>' // used as RCPT TO: address for SMTP
+     }
+ }

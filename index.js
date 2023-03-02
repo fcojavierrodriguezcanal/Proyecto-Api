@@ -65,6 +65,6 @@ mongoose.connect('mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/
 app.use("/", api);
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
-app.listen(PORT, () => console.log(chalk.blueBright(` Documentation Swagger running at port http://localhost:${PORT}`)));
+app.listen(PORT, () => console.log(chalk.blueBright(` Documentation Swagger running at port http://localhost:${PORT}/api-docs`)));
  
 

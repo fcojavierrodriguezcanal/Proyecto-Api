@@ -2,10 +2,10 @@
   "name": "api",
   "version": "1.0.0",
   "description": "1.1.1 REST API de selección libre de recursos . . . . . . . . . . . . . . . . . . . . . . 3",
-  "main": "data.js",
+  "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --inspect",
-    "start": "cross-env NODE_ENV=production node index",
+    "start": "nodemon",
     "test": "cross-env NODE_ENV=test echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,7 +16,7 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.2",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.21"
   },
   "dependencies": {
     "2": "^3.0.0",

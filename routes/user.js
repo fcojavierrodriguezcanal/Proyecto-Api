@@ -5,18 +5,36 @@ import { getUser } from '../controller/user.js';
 import bodyParser from 'body-parser'
 import bcrypt from 'bcrypt'
 import jwt from 'jwt-simple'
+
+
+
 const api = express.Router();
 
 var jsonParser = bodyParser.json()
  
-// create application/x-www-form-urlencoded parser
+
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+/**
+ * @openapi
+ * /user/:id:
+ *   get:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Returns a mysterious string.
+ */
+api.get('/user/:id', /*md_auth.ensureAuth,*/ getUser);
 
-api.get('/user/:id', function(req, res){
-  md_auth.ensureAuth, getUser
-});
-
+/**
+ * @openapi
+ * /register:
+ *   post:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Returns a mysterious string.
+ */
 api.post("/register",jsonParser, async (req, res) => {
 
   try {
@@ -75,11 +93,11 @@ api.post("/login", async (req, res) => {
     if (!(email && password)) {
       res.status(400).send("Faltan datos de usuario");
     }
-    // Validate if user exist in our database
+    //Validacion si el usuario existe
     const user = await User.findOne({ email });
 
     if (user && (await bcrypt.compare(password, user.password))) {
-      // Create token
+      // Creacion token
       const token = jwt.sign(
         { user_id: user._id, email },
         process.env.TOKEN_KEY,
@@ -87,7 +105,7 @@ api.post("/login", async (req, res) => {
           expiresIn: "1h",
         }
       );
-      // save user token
+      // Guardar usuario
       user.token = token;
       // user
       res.status(200).json(user);
