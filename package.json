@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "description": "1.1.1 REST API de selección libre de recursos . . . . . . . . . . . . . . . . . . . . . . 3",
-  "main": "index.js",
+  "main": "data.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --inspect",
     "start": "cross-env NODE_ENV=production node index",
