@@ -7,7 +7,8 @@ import swaggerJsDoc from 'swagger-jsdoc';
 //import auth from "./middleware/authenticated";
 import chalk from 'chalk';
 
-import { api } from './routes/user.js'
+import { api } from './routes/user.js';
+import { drawRoutes } from './routes/draw.js';
 //const mongoose = require('mongoose'); 
 //      mongoose.set('strictQuery', true)
 const PORT = process.env.PORT || 4001;
@@ -63,7 +64,7 @@ mongoose.connect('mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/
 
 
 app.use("/", api);
-
+app.use("/", drawRoutes);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 app.listen(PORT, () => console.log(chalk.blueBright(` Documentation Swagger running at port http://localhost:${PORT}/api-docs`)));
  

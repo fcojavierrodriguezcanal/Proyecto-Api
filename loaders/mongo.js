@@ -3,7 +3,7 @@ mongoose.set('strictQuery', true);
 
 mongoose.Promise = global.Promise;
 
-/*
+
 mongoose.connect('mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/?retryWrites=true&w=majority')
     .then(() => {
 
@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/
 
     })
     .catch(err => console.log(err));
-*/
+
 
 const mongoDB = "mongodb+srv://javierro222:adaits@cluster0.ky8z94l.mongodb.net/?retryWrites=true&w=majority";
 
