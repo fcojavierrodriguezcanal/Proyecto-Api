@@ -14,8 +14,9 @@ const app = express.Router();
 /**
  * @openapi
  * /indexphoto:
+ * 
  *   get :
- *     description: Welcome to swagger-jsdoc!
+ *     description: Interfaz subida de dibujo.
  *     responses:
  *       200:
  *         description: Interfaz subida de dibujo.
@@ -29,7 +30,7 @@ app.get('/indexphoto',function(req,res){
  * @openapi
  * /drawings:
  *   post:
- *     description: Welcome to swagger-jsdoc!
+ *     description: Subida de dibujo.
  *     responses:
  *       200:
  *         description: Subida de dibujo.
@@ -40,35 +41,43 @@ app.post('/drawings', upload.single('myImage'), (req, res) => {
 
   /**
  * @openapi
- * /drawings:
+ * /drawings/:nombre:
  *   post:
- *     description: Welcome to swagger-jsdoc!
+ *     description: ver dibujos
  *     responses:
  *       200:
  *         description: ver dibujos.
  */
 
-
 app.get('/drawings/:nombre', (req, res) => {
     getdraw(req, res);
 });
+
+
   /**
  * @openapi
  * /drawings:
  *   post:
- *     description: Welcome to swagger-jsdoc!
+ *     description: Busqueda de dibujo.
  *     responses:
  *       200:
  *         description: Busqueda de dibujo.
  */
-//BUSQUEDA DIBUJO
-
 app.get('/photo/:id', (req, res) => {
     searchdraw(req,res)
 })
 
-//BORRASION DE DIBUJO
 
+
+ /**
+ * @openapi
+ * /photo/:id
+ *   post:
+ *     description: Borrasion de dibujo.
+ *     responses:
+ *       200:
+ *         description: borrar dibujo.
+ */
 app.delete('/photo/:id', (req, res) => {
     deletedrawing(req,res)
 })
