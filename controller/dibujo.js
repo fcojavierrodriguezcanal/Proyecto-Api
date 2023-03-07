@@ -73,8 +73,8 @@ async function deletedrawing(req, res) {
 function searchdraw(req, res) {
     var filename = req.params.id;
     Dibujo.find({ id: req.params.id }, (err, dibujo) => {
-        res.setHeader('content-type', 'image/png');
-        res.send(dibujo[0].base64Content.data)
+        res.setHeader('content-type', 'image/jpeg');
+        res.send(dibujo[0])
 
 
     });
