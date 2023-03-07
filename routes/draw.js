@@ -1,5 +1,5 @@
 import express from 'express';
-import { uploaddraw, getdraw, searchdraw } from '../controller/dibujo.js';
+import { uploaddraw, getdraw, searchdraw, deletedrawing } from '../controller/dibujo.js';
 import { upload } from '../loaders/multerloader.js';
 import mongodb from 'mongodb';
 import path from 'path';
@@ -11,26 +11,66 @@ const __dirname = dirname(__filename);
 
 const app = express.Router();
 
+/**
+ * @openapi
+ * /indexphoto:
+ *   get :
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Interfaz subida de dibujo.
+ */
 //INDICE DE SUBIDA DE ARCHIVOS
 app.get('/indexphoto',function(req,res){
     res.sendFile(path.join(__dirname,  '..', '/resources/drawmulter.html'));
   });
 
-// SUBIDA DE DIBUJOS
+  /**
+ * @openapi
+ * /drawings:
+ *   post:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Subida de dibujo.
+ */
 app.post('/drawings', upload.single('myImage'), (req, res) => {
     uploaddraw(req, res);
 })
 
-// VER DIBUJOS
+  /**
+ * @openapi
+ * /drawings:
+ *   post:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: ver dibujos.
+ */
+
 
 app.get('/drawings/:nombre', (req, res) => {
     getdraw(req, res);
 });
-
+  /**
+ * @openapi
+ * /drawings:
+ *   post:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Busqueda de dibujo.
+ */
 //BUSQUEDA DIBUJO
 
 app.get('/photo/:id', (req, res) => {
     searchdraw(req,res)
+})
+
+//BORRASION DE DIBUJO
+
+app.delete('/photo/:id', (req, res) => {
+    deletedrawing(req,res)
 })
 
 const drawRoutes=app;

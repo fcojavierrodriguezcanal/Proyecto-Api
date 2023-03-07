@@ -6,10 +6,12 @@ const Schema = mongoose.Schema;
 
 const DibujoSchema = Schema({
     nombre: { type: String, default: null },
+    id : { type: String },
     user: { type: String, default: null },
     fecha: { type: String, default:null },
     tipo: {type: String, default: null },
-    base64Content: { type: Buffer, default: null }
+    base64Content: { type: Buffer, default: null },
+    price: { type: String }
 
 });
 

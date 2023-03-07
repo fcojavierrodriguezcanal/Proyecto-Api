@@ -20,14 +20,20 @@ const UserSchema = Schema({
      
 });
 
-const User = mongoose.model('user', UserSchema);
-
 const dibujanteSchema = new Schema({
+    id: {type: ObjectId, required:false},
+    first_name: { type: String, default: null },
+    last_name: { type: String, default: null },
+    email: { type: String, unique: true },
+    password: { type: String },
+    drawings: [] 
 
 })
-const clienteSchema = new Schema({})
+
+const User = mongoose.model('user', UserSchema);
+
 
 const Dibujante = User.discriminator('Dibujante', dibujanteSchema, options);
-const Cliente = User.discriminator('Cliente', clienteSchema, options);
 
-export { User, Dibujante, Cliente };
+
+export { User, Dibujante};

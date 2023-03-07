@@ -1,7 +1,7 @@
 // src/routes/user
 import { User } from "../models/user.js"
 import express from 'express';
-import { getUser,registerUser,loginUser } from '../controller/user.js';
+import { getUser,registerUser,loginUser, deleteuser, getUsers } from '../controller/user.js';
 import bodyParser from 'body-parser'
 import bcrypt from 'bcrypt'
 import jwt from 'jwt-simple'
@@ -26,6 +26,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
  */
 api.get('/user/:id', /*md_auth.ensureAuth,*/ getUser);
 
+api.get('/users/', /*md_auth.ensureAuth,*/ getUsers);
 /**
  * @openapi
  * /register:
@@ -36,7 +37,21 @@ api.get('/user/:id', /*md_auth.ensureAuth,*/ getUser);
  *         description: Registra un nuevo usuario.
  */
 api.post("/register",jsonParser, async (req, res) => {
-  registerUser;
+
+  registerUser(req, res);
+});
+
+/**
+ * @openapi
+ * /deleteuser:
+ *   delete:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Borra un usuario.
+ */
+api.delete("/delete/:id",jsonParser, async (req, res) => {
+  deleteuser(req, res);
 });
 
 /**
