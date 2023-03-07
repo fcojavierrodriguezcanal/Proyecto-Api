@@ -21,13 +21,7 @@ const UserSchema = Schema({
 });
 
 const dibujanteSchema = new Schema({
-    id: {type: ObjectId, required:false},
-    first_name: { type: String, default: null },
-    last_name: { type: String, default: null },
-    email: { type: String, unique: true },
-    password: { type: String },
     drawings: [] 
-
 })
 
 const User = mongoose.model('user', UserSchema);

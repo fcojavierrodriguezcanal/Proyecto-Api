@@ -47,9 +47,9 @@ async function uploaddraw(req, res) {
 }
 
 function getdraw(req, res) {
+
     Dibujo.find({ fecha: req.params['nombre'] }, (err, dibujo) => {
-
-
+        
     });
 
 }

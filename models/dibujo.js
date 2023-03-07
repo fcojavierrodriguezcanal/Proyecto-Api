@@ -11,7 +11,7 @@ const DibujoSchema = Schema({
     fecha: { type: String, default:null },
     tipo: {type: String, default: null },
     base64Content: { type: Buffer, default: null },
-    price: { type: String }
+    
 
 });
 

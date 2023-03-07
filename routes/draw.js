@@ -69,15 +69,7 @@ app.get('/photo/:id', (req, res) => {
 
 
 
- /**
- * @openapi
- * /photo/:id
- *   post:
- *     description: Borrasion de dibujo.
- *     responses:
- *       200:
- *         description: borrar dibujo.
- */
+
 app.delete('/photo/:id', (req, res) => {
     deletedrawing(req,res)
 })

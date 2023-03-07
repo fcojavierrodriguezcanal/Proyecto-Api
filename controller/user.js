@@ -93,19 +93,23 @@ async function loginUser(req, res) {
 
     if (user && (await bcrypt.compare(password, user.password))) {
       // Creacion token
-      const token = jwt.sign(
-        { user_id: user._id, email },
-        process.env.TOKEN_KEY,
-        {
-          expiresIn: "1h",
-        }
-      );
-      // Guardar usuario
-      user.token = token;
-      // user
-      res.status(200).json(user);
+      if(password==user.password){
+        res.status(200).send("Usuario logeado");
+        const token = jwt.sign(
+          { user_id: user._id, email },
+          process.env.TOKEN_KEY,
+          {
+            expiresIn: "1h",
+          }
+          
+        );
+      }
+      else{
+        res.status(400).send("Las credenciales son erroneas");
+      }
+
     }
-    res.status(400).send("Las credenciales son erroneas");
+    
   } catch (err) {
     console.log(err);
   }

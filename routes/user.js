@@ -17,9 +17,9 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 /**
  * @openapi
- * /user/:id:
+ * /users/:id:
  *   get:
- *     description: Welcome to swagger-jsdoc!
+ *     description: devolver lista de usuarios
  *     responses:
  *       200:
  *         description: Devuelve lista de usuarios.
@@ -27,23 +27,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 api.get('/user/:id', /*md_auth.ensureAuth,*/ getUser);
 
 api.get('/users/', /*md_auth.ensureAuth,*/ getUsers);
-/**
- * @openapi
- * /register:
- *   post:
- *     description: Welcome to swagger-jsdoc!
- *     responses:
- *       200:
- *         description: Registra un nuevo usuario.
- */
-api.post("/register",jsonParser, async (req, res) => {
 
-  registerUser(req, res);
-});
 
 /**
  * @openapi
- * /deleteuser:
+ * /delete/:id:
  *   delete:
  *     description: Welcome to swagger-jsdoc!
  *     responses:
@@ -65,6 +53,23 @@ api.delete("/delete/:id",jsonParser, async (req, res) => {
  */
 api.post("/login", async (req, res) => {
   loginUser;
+});
+
+/**
+ * @openapi
+ * /register:
+ *   post:
+ *     description: Welcome to swagger-jsdoc!
+ *     responses:
+ *       200:
+ *         description: Registra un nuevo usuario.
+ *      schemas: 
+ *        type:object
+ *          name:
+ */
+api.post("/register",jsonParser, async (req, res) => {
+
+  registerUser(req, res);
 });
 
 export { api };
